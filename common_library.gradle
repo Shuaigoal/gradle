@@ -60,7 +60,7 @@ def deps = [:]
 def nordic = [:]
 nordic.scanner = "no.nordicsemi.android.support.v18:scanner:$versions.nordic_scanner"
 nordic.log = "no.nordicsemi.android:log:$versions.nordic_log"
-nordic.ble = 'no.nordicsemi.android:ble:$versions.nordic_ble'
+nordic.ble = "no.nordicsemi.android:ble:$versions.nordic_ble"
 deps.nordic = nordic
 
 def joda = [:]
