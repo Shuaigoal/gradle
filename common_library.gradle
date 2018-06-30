@@ -164,8 +164,9 @@ def addRepos(RepositoryHandler handler) {
     handler.maven { url "https://jitpack.io" }
     handler.maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     //测试仓库
-    handler.maven{ url 'http://localhost:9093/nexus/content/repositories/test-release/'}
+    //handler.maven{ url 'http://localhost:9093/nexus/content/repositories/test-release/'}
     handler.maven{ url 'http://localhost:9093/nexus/content/repositories/dangsang-release/'}
+    handler.maven{ url 'http://localhost:9093/nexus/content/repositories/dangsang-snapshots/'}
 }
 
 ext.addRepos = this.&addRepos
