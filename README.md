@@ -1,5 +1,8 @@
 # gradle
-build gradle properties files templates
+
+You should add needed keys to properties file in project or module
+
+    build.properties
 
 Modify the module build.gradle's content to...
 
