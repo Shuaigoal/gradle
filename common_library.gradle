@@ -157,7 +157,7 @@ ext.build_versions = build_versions
 //-------------------------------------------//
 
 def addRepos(RepositoryHandler handler) {
-    //handler.google()
+    handler.google()
     handler.jcenter()
     handler.mavenCentral()
     //Add the JitPack repository
