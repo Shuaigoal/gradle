@@ -187,8 +187,8 @@ def addRepos(RepositoryHandler handler) {
 
 
     //局域网仓库
-    handler.maven { url 'http://192.168.101.143:9093/nexus/content/repositories/dangsang-release/' }
-    handler.maven { url 'http://192.168.101.143:9093/nexus/content/repositories/dangsang-snapshots/' }
+    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-release/' }
+    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-snapshots/' }
 }
 
 ext.addRepos = this.&addRepos
