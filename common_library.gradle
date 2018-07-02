@@ -7,12 +7,15 @@ ext.deps = [:]
 
 
 def versions = [:]
+//bong bracelet and bodyfit lib
+//bong手环和体脂秤的库
+versions.bongsdk = "2.6.1"
 //日历
 //https://github.com/MagicMashRoom/SuperCalendar
-versions.SuperCalendar="1.6"
+versions.SuperCalendar = "1.6"
 //图表
 //https://github.com/PhilJay/MPAndroidChart
-versions.MPAndroidChart="v3.0.3"
+versions.MPAndroidChart = "v3.0.3"
 //versions.junit = "4.12"
 versions.android_gradle_plugin = "3.1.2"
 versions.kotlin = "1.2.30"
@@ -57,6 +60,12 @@ versions.nordic_ble = "1.1.0"
 versions.joda_time = "2.3"
 
 def deps = [:]
+
+//bong sdk key
+def bong = [:]
+bong.sdk = "cn.bong.android:bongsdk:$versions.bongsdk"
+deps.bong = bong
+
 def nordic = [:]
 nordic.scanner = "no.nordicsemi.android.support.v18:scanner:$versions.nordic_scanner"
 nordic.log = "no.nordicsemi.android:log:$versions.nordic_log"
@@ -127,9 +136,9 @@ deps.persistent_cookie = "com.github.franmontiel:PersistentCookieJar:$versions.p
 deps.gson = "com.google.code.gson:gson:$versions.gson"
 deps.permission = "com.yanzhenjie:permission:$versions.permission"
 deps.utils = "com.blankj:utilcode:$versions.utils"
-deps.top_snackbar ="com.androidadvance:topsnackbar:$versions.top_snackbar"
+deps.top_snackbar = "com.androidadvance:topsnackbar:$versions.top_snackbar"
 deps.litepal = "org.litepal.android:core:$versions.litepal"
-deps.toasty =  "com.github.GrenderG:Toasty:$versions.toasty"
+deps.toasty = "com.github.GrenderG:Toasty:$versions.toasty"
 deps.logger = "com.orhanobut:logger:$versions.logger"
 
 //ARouter
@@ -148,11 +157,14 @@ ext.deps = deps
 //-------------------------------------------
 //编译，最小及目标版本控制
 def build_versions = [:]
-build_versions.buildToolsVersion="27.0.3"
-build_versions.compileSdkVersion=27
-build_versions.minSdkVersion=18
-build_versions.targetSdkVersion=27
+build_versions.buildToolsVersion = "27.0.3"
+build_versions.compileSdkVersion = 27
+build_versions.minSdkVersion = 18
+build_versions.targetSdkVersion = 27
 
+build_versions.min_sdk = 18
+build_versions.target_sdk = 27
+build_versions.build_tools = "27.0.3"
 ext.build_versions = build_versions
 //-------------------------------------------//
 
@@ -160,12 +172,24 @@ def addRepos(RepositoryHandler handler) {
     handler.google()
     handler.jcenter()
     handler.mavenCentral()
+
     //Add the JitPack repository
     handler.maven { url "https://jitpack.io" }
-    handler.maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+
+    //google maven
+    handler.maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+    //bong maven
+    handler.maven { url 'http://112.124.27.178:9093/repository/maven-public/' }
+
+
     //测试仓库
-    handler.maven{ url 'http://localhost:9093/nexus/content/repositories/test-release/'}
-    handler.maven{ url 'http://localhost:9093/nexus/content/repositories/dangsang-release/'}
+    //handler.maven { url 'http://localhost:9093/nexus/content/repositories/test-release/' }
+    handler.maven { url 'http://localhost:9093/nexus/content/repositories/dangsang-release/' }
+    handler.maven { url 'http://localhost:9093/nexus/content/repositories/dangsang-snapshots/' }
 }
 
 ext.addRepos = this.&addRepos
