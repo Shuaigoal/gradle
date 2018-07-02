@@ -187,9 +187,15 @@ def addRepos(RepositoryHandler handler) {
 
 
     //测试仓库
+
     //handler.maven { url 'http://localhost:9093/nexus/content/repositories/test-release/' }
     handler.maven { url 'http://localhost:9093/nexus/content/repositories/dangsang-release/' }
     handler.maven { url 'http://localhost:9093/nexus/content/repositories/dangsang-snapshots/' }
+
+    //handler.maven{ url 'http://localhost:9093/nexus/content/repositories/test-release/'}
+    handler.maven{ url 'http://localhost:9093/nexus/content/repositories/dangsang-release/'}
+    handler.maven{ url 'http://localhost:9093/nexus/content/repositories/dangsang-snapshots/'}
+
 }
 
 ext.addRepos = this.&addRepos
