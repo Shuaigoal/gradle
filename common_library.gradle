@@ -7,6 +7,10 @@ ext.deps = [:]
 
 
 def versions = [:]
+//greenDao数据库
+//https://github.com/greenrobot/greenDAO
+versions.greendao="3.2.2"
+
 //bong bracelet and bodyfit lib
 //bong手环和体脂秤的库
 versions.bongsdk = "2.6.1"
@@ -30,6 +34,10 @@ versions.rxjava2 = "2.1.14"//23-May-2018
 versions.rx_android = "2.0.2"//13-Feb-2018
 versions.retrofit = "2.4.0"//14-Mar-2018
 versions.rxbinding = "2.1.1"
+versions.logging_interceptor="3.8.0"
+//activity or fragment lifecylce
+versions.rxlifecycle="2.1.0"
+
 
 versions.event_bus = "3.1.1"
 versions.photo_view = "2.0.0"
@@ -99,8 +107,17 @@ retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
 retrofit.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
 retrofit.rx_android = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
 retrofit.rxbinding = "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding"
+retrofit.logging_interceptor="com.squareup.okhttp3:logging-interceptor:$versions.logging_interceptor"
 deps.retrofit = retrofit
 
+def rxlifecycle=[:]
+rxlifecycle.rxlifecycle="com.trello.rxlifecycle2:rxlifecycle:$versions.rxlifecycle"
+rxlifecycle.components="com.trello.rxlifecycle2:rxlifecycle-components:$versions.rxlifecycle"
+deps.rxlifecycle = rxlifecycle
+
+def database=[:]
+database.greendao = "org.greenrobot:greendao:$versions.greendao"
+deps.database = database
 
 def dagger = [:]
 dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
@@ -186,7 +203,8 @@ def addRepos(RepositoryHandler handler) {
     handler.maven { url 'http://112.124.27.178:9093/repository/maven-public/' }
 
 
-    //局域网仓库
+    //测试仓库
+    //handler.maven { url 'http://localhost:9093/nexus/content/repositories/test-release/' }
     handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-release/' }
     handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-snapshots/' }
 }
