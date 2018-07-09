@@ -10,6 +10,7 @@ def versions = [:]
 //greenDao数据库
 //https://github.com/greenrobot/greenDAO
 versions.greendao="3.2.2"
+versions.greendao_gradle_plugin = "3.2.1"
 
 //bong bracelet and bodyfit lib
 //bong手环和体脂秤的库
@@ -22,6 +23,7 @@ versions.SuperCalendar = "1.6"
 versions.MPAndroidChart = "v3.0.3"
 //versions.junit = "4.12"
 versions.android_gradle_plugin = "3.1.2"
+
 versions.kotlin = "1.2.30"
 versions.support = "27.0.2"
 versions.multidex = "1.0.2"
@@ -119,6 +121,11 @@ def database=[:]
 database.greendao = "org.greenrobot:greendao:$versions.greendao"
 deps.database = database
 
+//green dao plugin
+def greendao_gradle_plugin=[:]
+greendao_gradle_plugin="org.greenrobot:greendao-gradle-plugin:$versions.greendao_gradle_plugin"
+deps.greendao_gradle_plugin=greendao_gradle_plugin
+
 def dagger = [:]
 dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
 dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
@@ -205,8 +212,8 @@ def addRepos(RepositoryHandler handler) {
 
     //测试仓库
     //handler.maven { url 'http://localhost:9093/nexus/content/repositories/test-release/' }
-    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-release/' }
-    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-snapshots/' }
+//    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-release/' }
+//    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-snapshots/' }
 }
 
 ext.addRepos = this.&addRepos
