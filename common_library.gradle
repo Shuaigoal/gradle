@@ -1,8 +1,9 @@
 /**
  * Shared file between builds so that they can all use the same dependencies and
  * maven repositories.
+ *  "https://raw.githubusercontent.com/Shuaigoal/gradle/common/common_library.gradle"
  **/
-//apply from:'common_versions.gradle'
+
 ext.deps = [:]
 
 
