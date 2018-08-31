@@ -27,7 +27,7 @@ versions.android_gradle_plugin = "3.1.2"
 versions.kotlin = "1.2.30"
 versions.support = "27.0.2"
 versions.multidex = "1.0.2"
-versions.constraint_layout = "1.1.1"
+versions.constraint_layout = "1.1.2"
 versions.dagger = "2.11"
 versions.glide = "3.8.0"
 
