@@ -7,6 +7,9 @@ ext.deps = [:]
 
 
 def versions = [:]
+
+//https://github.com/yanzhenjie/album
+versions.album="2.1.0"
 //greenDao数据库
 //https://github.com/greenrobot/greenDAO
 versions.greendao = "3.2.2"
@@ -179,6 +182,8 @@ deps.MPAndroidChart = "com.github.PhilJay:MPAndroidChart:$versions.MPAndroidChar
 //日历
 deps.SuperCalendar = "com.github.MagicMashRoom:SuperCalendar:$versions.SuperCalendar"
 
+//相册拍照 
+deps.picture="com.yanzhenjie:album:$versions.album"
 
 ext.deps = deps
 
