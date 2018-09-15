@@ -7,7 +7,8 @@ ext.deps = [:]
 
 
 def versions = [:]
-
+//https://github.com/chrisbanes/PhotoView
+versions.PhotoView="2.1.4"
 //https://github.com/yanzhenjie/album
 versions.album="2.1.0"
 //greenDao数据库
@@ -184,6 +185,8 @@ deps.SuperCalendar = "com.github.MagicMashRoom:SuperCalendar:$versions.SuperCale
 
 //相册拍照 
 deps.picture="com.yanzhenjie:album:$versions.album"
+
+deps.PhotoView="com.github.chrisbanes:PhotoView:$versions.PhotoView"
 
 ext.deps = deps
 
