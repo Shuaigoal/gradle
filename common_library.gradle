@@ -1,230 +1,231 @@
+ext {
+
 /**
  * Shared file between builds so that they can all use the same dependencies and
  * maven repositories.
  **/
 //apply from:'common_versions.gradle'
-ext.deps = [:]
+//ext.deps = [:]
 
+//def versions = [:]
+////https://github.com/chrisbanes/PhotoView
+//versions.PhotoView='2.1.4'
+////https://github.com/yanzhenjie/album
+//versions.album='2.1.0'
+////greenDao数据库
+////https://github.com/greenrobot/greenDAO
+//versions.greendao = '3.2.2'
+//versions.greendao_gradle_plugin = '3.2.1'
+//
+////bong bracelet and bodyfit lib
+////bong手环和体脂秤的库
+//versions.bongsdk = '2.6.1'
+////日历
+////https://github.com/MagicMashRoom/SuperCalendar
+//versions.SuperCalendar = '1.6'
+////图表
+////https://github.com/PhilJay/MPAndroidChart
+//versions.MPAndroidChart = 'v3.0.3'
+////versions.junit = '4.12'
+//versions.android_gradle_plugin = '2.3.1'
+//
+//versions.kotlin = '1.2.30'
+//versions.support = '27.0.2'
+//versions.multidex = '1.0.2'
+//versions.constraint_layout = '1.1.2'
+//versions.dagger = '2.11'
+//versions.glide = '3.8.0'
+//
+////Retrofit and Rxjava2
+//versions.rxjava2 = '2.1.14'//23-May-2018
+//versions.rx_android = '2.0.2'//13-Feb-2018
+//versions.retrofit = '2.4.0'//14-Mar-2018
+//versions.rxbinding = '2.1.1'
+//versions.logging_interceptor = '3.8.0'
+////activity or fragment lifecylce
+//versions.rxlifecycle = '2.1.0'
+//versions.converter_scalars = '2.3.0'
+//
+//
+//versions.event_bus = '3.1.1'
+//versions.photo_view = '2.0.0'
+//versions.persistent_cookie = 'v1.0.1'
+//versions.gson = '2.8.5'
+//versions.qmui = '1.0.4'
+//versions.flow_layout = '1.0.3'
+////versions.swipe_recycler = '1.1.3'
+//versions.easy_recycler = '4.4.2'
+////https://github.com/yanzhenjie/AndPermission [using]
+////https://github.com/tbruyelle/RxPermissions
+//versions.permission = '2.0.0-rc11'//2018-7
+//versions.utils = '1.10.0'
+//versions.top_snackbar = '1.1.1'
+//versions.litepal = '1.6.1'
+//versions.toasty = '1.1.3'
+//versions.logger = '1.15'
+//versions.material_dialog = '0.9.6.0'
+////Arouter
+//versions.arouter_compiler = '1.1.4'
+//versions.arouter_api = '1.3.1'
+////nordic scanner
+//////https://github.com/NordicSemiconductor/Android-Scanner-Compat-Library
+//versions.nordic_scanner = '1.1.0'
+//////https://github.com/NordicSemiconductor/nRF-Logger-API
+//versions.nordic_log = '2.1.1'
+//////https://github.com/NordicSemiconductor/Android-BLE-Library
+//versions.nordic_ble = '1.1.0'
+////jodatime time control
+//versions.joda_time = '2.3'
 
-def versions = [:]
-//https://github.com/chrisbanes/PhotoView
-versions.PhotoView="2.1.4"
-//https://github.com/yanzhenjie/album
-versions.album="2.1.0"
-//greenDao数据库
-//https://github.com/greenrobot/greenDAO
-versions.greendao = "3.2.2"
-versions.greendao_gradle_plugin = "3.2.1"
-
-//bong bracelet and bodyfit lib
-//bong手环和体脂秤的库
-versions.bongsdk = "2.6.1"
-//日历
-//https://github.com/MagicMashRoom/SuperCalendar
-versions.SuperCalendar = "1.6"
-//图表
-//https://github.com/PhilJay/MPAndroidChart
-versions.MPAndroidChart = "v3.0.3"
-//versions.junit = "4.12"
-versions.android_gradle_plugin = "3.1.2"
-
-versions.kotlin = "1.2.30"
-versions.support = "27.0.2"
-versions.multidex = "1.0.2"
-versions.constraint_layout = "1.1.2"
-versions.dagger = "2.11"
-versions.glide = "3.8.0"
-
-//Retrofit and Rxjava2
-versions.rxjava2 = "2.1.14"//23-May-2018
-versions.rx_android = "2.0.2"//13-Feb-2018
-versions.retrofit = "2.4.0"//14-Mar-2018
-versions.rxbinding = "2.1.1"
-versions.logging_interceptor = "3.8.0"
-//activity or fragment lifecylce
-versions.rxlifecycle = "2.1.0"
-versions.converter_scalars = "2.3.0"
-
-
-versions.event_bus = "3.1.1"
-versions.photo_view = "2.0.0"
-versions.persistent_cookie = "v1.0.1"
-versions.gson = "2.8.5"
-versions.qmui = "1.0.4"
-versions.flow_layout = "1.0.3"
-//versions.swipe_recycler = "1.1.3"
-versions.easy_recycler = "4.4.2"
-//https://github.com/yanzhenjie/AndPermission [using]
-//https://github.com/tbruyelle/RxPermissions
-versions.permission = "2.0.0-rc11"//2018-7
-versions.utils = "1.10.0"
-versions.top_snackbar = "1.1.1"
-versions.litepal = "1.6.1"
-versions.toasty = "1.1.3"
-versions.logger = "1.15"
-versions.material_dialog = "0.9.6.0"
-//Arouter
-versions.arouter_compiler = "1.1.4"
-versions.arouter_api = "1.3.1"
-//nordic scanner
-////https://github.com/NordicSemiconductor/Android-Scanner-Compat-Library
-versions.nordic_scanner = "1.1.0"
-////https://github.com/NordicSemiconductor/nRF-Logger-API
-versions.nordic_log = "2.1.1"
-////https://github.com/NordicSemiconductor/Android-BLE-Library
-versions.nordic_ble = "1.1.0"
-//jodatime time control
-versions.joda_time = "2.3"
-
-def deps = [:]
+//def deps = [:]
 
 //bong sdk key
-def bong = [:]
-bong.sdk = "cn.bong.android:bongsdk:$versions.bongsdk"
-deps.bong = bong
+//def bong = [:]
+    deps_bong_sdk = 'cn.bong.android:bongsdk:2.7.1'
+//deps.bong = bong
 
-def nordic = [:]
-nordic.scanner = "no.nordicsemi.android.support.v18:scanner:$versions.nordic_scanner"
-nordic.log = "no.nordicsemi.android:log:$versions.nordic_log"
-nordic.ble = "no.nordicsemi.android:ble:$versions.nordic_ble"
-deps.nordic = nordic
+//def nordic = [:]
+    deps_nordic_scanner = 'no.nordicsemi.android.support.v18:scanner:1.1.0'
+    deps_nordic_log = 'no.nordicsemi.android:log:2.1.1'
+    deps_nordic_ble = 'no.nordicsemi.android:ble:1.1.0'
+//deps.nordic = nordic
 
-def joda = [:]
-joda.time = "joda-time:joda-time:$versions.joda_time"
-deps.joda = joda
+//def joda = [:]
+    deps_joda_time = 'joda-time:joda-time:2.3'
+//deps.joda = joda
 
-def support = [:]
-support.annotations = "com.android.support:support-annotations:$versions.support"
-support.app_compat = "com.android.support:appcompat-v7:$versions.support"
-support.v13 = "com.android.support:support-v13:$versions.support"
-support.percent = "com.android.support:percent:$versions.support"
-support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
-support.core_ui = "com.android.support:support-core-ui:$versions.support"
-support.cardview = "com.android.support:cardview-v7:$versions.support"
-support.design = "com.android.support:design:$versions.support"
-support.v4 = "com.android.support:support-v4:$versions.support"
-support.core_utils = "com.android.support:support-core-utils:$versions.support"
-support.multidex = "com.android.support:multidex:$versions.multidex"
-deps.support = support
+//def support = [:]
+    deps_support_annotations = 'com.android.support:support-annotations:27.0.2'
+    deps_support_app_compat = 'com.android.support:appcompat-v7:27.0.2'
+    deps_support_v13 = 'com.android.support:support-v13:27.0.2'
+    deps_support_percent = 'com.android.support:percent:27.0.2'
+    deps_support_recyclerview = 'com.android.support:recyclerview-v7:27.0.2'
+    deps_support_core_ui = 'com.android.support:support-core-ui:27.0.2'
+    deps_support_cardview = 'com.android.support:cardview-v7:27.0.2'
+    deps_support_design = 'com.android.support:design:27.0.2'
+    deps_support_v4 = 'com.android.support:support-v4:27.0.2'
+    deps_support_core_utils = 'com.android.support:support-core-utils:27.0.2'
+    deps_support_multidex = 'com.android.support:multidex:1.0.2'
+//deps.support = support
 
-
-def retrofit = [:]
+//def retrofit = [:]
 // https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava2
-retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
-retrofit.adapter = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
-retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
-retrofit.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
-retrofit.rx_android = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
-retrofit.rxbinding = "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding"
-retrofit.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.logging_interceptor"
-retrofit.converter_scalars = "com.squareup.retrofit2:converter-scalars:$versions.converter_scalars"
-deps.retrofit = retrofit
+    deps_retrofit_runtime = 'com.squareup.retrofit2:retrofit:2.4.0'
+    deps_retrofit_adapter = 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    deps_retrofit_gson = 'com.squareup.retrofit2:converter-gson:2.4.0'
+    deps_retrofit_rxjava2 = 'io.reactivex.rxjava2:rxjava:2.1.14'
+    deps_retrofit_rx_android = 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    deps_retrofit_rxbinding = 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+    deps_retrofit_logging_interceptor = 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    deps_retrofit_converter_scalars = 'com.squareup.retrofit2:converter-scalars:2.3.0'
+//deps.retrofit = retrofit
 
-def rxlifecycle = [:]
-rxlifecycle.rxlifecycle = "com.trello.rxlifecycle2:rxlifecycle:$versions.rxlifecycle"
-rxlifecycle.components = "com.trello.rxlifecycle2:rxlifecycle-components:$versions.rxlifecycle"
-deps.rxlifecycle = rxlifecycle
+//def rxlifecycle = [:]
+    deps_rxlifecycle_rxlifecycle = 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
+    deps_rxlifecycle_components = 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+//deps.rxlifecycle = rxlifecycle
 
-def database = [:]
-database.greendao = "org.greenrobot:greendao:$versions.greendao"
-deps.database = database
+//def database = [:]
+    deps_database_greendao = 'org.greenrobot:greendao:3.2.2'
+//deps.database = database
 
 //green dao plugin
-def greendao_gradle_plugin = [:]
-greendao_gradle_plugin = "org.greenrobot:greendao-gradle-plugin:$versions.greendao_gradle_plugin"
-deps.greendao_gradle_plugin = greendao_gradle_plugin
+//def greendao_gradle_plugin = [:]
+    deps_database_greendao_gradle_plugin = 'org.greenrobot:greendao-gradle-plugin:3.2.1'
+//deps.greendao_gradle_plugin = greendao_gradle_plugin
 
-def dagger = [:]
-dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
-dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
-dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
-dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
-dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
-deps.dagger = dagger
+//def dagger = [:]
+    deps_dagger_runtime = 'com.google.dagger:dagger:2.11'
+    deps_dagger_android = 'com.google.dagger:dagger-android:2.11'
+    deps_dagger_android_support = 'com.google.dagger:dagger-android-support:2.11'
+    deps_dagger_compiler = 'com.google.dagger:dagger-compiler:2.11'
+    deps_dagger_android_support_compiler = 'com.google.dagger:dagger-android-processor:2.11'
+//deps.dagger = dagger
 
-
-def kotlin = [:]
-kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin"
-kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
-kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
-deps.kotlin = kotlin
+//def kotlin = [:]
+    deps_kotlin_stdlib = 'org.jetbrains.kotlin:kotlin-stdlib-jre7:1.2.30'
+    deps_kotlin_test = 'org.jetbrains.kotlin:kotlin-test-junit:1.2.30'
+    deps_kotlin_plugin = 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.30'
+//deps.kotlin = kotlin
 
 //view
-deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
-deps.qmui = "com.qmuiteam:qmui:$versions.qmui"
-deps.flow_layout = "com.zhy:flowlayout-lib:$versions.flow_layout"
-//deps.swipe_recycler = "com.yanzhenjie:recyclerview-swipe:$versions.swipe_recycler"
-deps.easy_recycler = "com.jude:easyrecyclerview:$versions.easy_recycler"
-deps.photo_view = "com.github.chrisbanes:PhotoView:$versions.photo_view"
-deps.material_dialog = "com.afollestad.material-dialogs:core:$versions.material_dialog"
+    deps_constraint_layout = 'com.android.support.constraint:constraint-layout:1.1.2'
+    deps_qmui = 'com.qmuiteam:qmui:1.0.4'
+    deps_flow_layout = 'com.zhy:flowlayout-lib:1.0.3'
+//deps_swipe_recycler = 'com.yanzhenjie:recyclerview-swipe:versions.swipe_recycler'
+    deps_easy_recycler = 'com.jude:easyrecyclerview:4.4.2'
+    deps_photo_view = 'com.github.chrisbanes:PhotoView:2.0.0'
+    deps_material_dialog = 'com.afollestad.material-dialogs:core:0.9.6.0'
 
-deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
-//deps.junit = "junit:junit:$versions.junit"
+    deps_android_gradle_plugin = 'com.android.tools.build:gradle:2.3.1'
+//deps_junit = 'junit:junit:versions.junit'
 
 //other
-deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
-deps.event_bus = "org.greenrobot:eventbus:$versions.event_bus"
-deps.persistent_cookie = "com.github.franmontiel:PersistentCookieJar:$versions.persistent_cookie"
-deps.gson = "com.google.code.gson:gson:$versions.gson"
-deps.permission = "com.yanzhenjie:permission:$versions.permission"
-deps.utils = "com.blankj:utilcode:$versions.utils"
-deps.top_snackbar = "com.androidadvance:topsnackbar:$versions.top_snackbar"
-deps.litepal = "org.litepal.android:core:$versions.litepal"
-deps.toasty = "com.github.GrenderG:Toasty:$versions.toasty"
-deps.logger = "com.orhanobut:logger:$versions.logger"
+    deps_glide = 'com.github.bumptech.glide:glide:3.8.0'
+    deps_event_bus = 'org.greenrobot:eventbus:3.1.1'
+    deps_persistent_cookie = 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    deps_gson = 'com.google.code.gson:gson:2.8.5'
+    deps_permission = 'com.yanzhenjie:permission:2.0.0-rc11'
+    deps_utils = 'com.blankj:utilcode:1.10.0'
+    deps_top_snackbar = 'com.androidadvance:topsnackbar:1.1.1'
+    deps_litepal = 'org.litepal.android:core:1.6.1'
+    deps_toasty = 'com.github.GrenderG:Toasty:1.1.3'
+    deps_logger = 'com.orhanobut:logger:1.15'
 
 //ARouter
-deps.arouter_api = "com.alibaba:arouter-api:$versions.arouter_api"
-deps.arouter_compiler = "com.alibaba:arouter-compiler:$versions.arouter_compiler"
+    deps_arouter_api = 'com.alibaba:arouter-api:1.3.1'
+    deps_arouter_compiler = 'com.alibaba:arouter-compiler:1.1.4'
 
 //图表
-deps.MPAndroidChart = "com.github.PhilJay:MPAndroidChart:$versions.MPAndroidChart"
+    deps_MPAndroidChart = 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
 //日历
-deps.SuperCalendar = "com.github.MagicMashRoom:SuperCalendar:$versions.SuperCalendar"
+    deps_SuperCalendar = 'com.github.MagicMashRoom:SuperCalendar:1.6'
 
-//相册拍照 
-deps.picture="com.yanzhenjie:album:$versions.album"
+//相册拍照
+    deps_picture = 'com.yanzhenjie:album:2.1.0'
 
-deps.PhotoView="com.github.chrisbanes:PhotoView:$versions.PhotoView"
+    deps_PhotoView = 'com.github.chrisbanes:PhotoView:2.1.4'
 
-ext.deps = deps
+//ext.deps = deps
 
 //-------------------------------------------
 //编译，最小及目标版本控制
-def build_versions = [:]
-build_versions.buildToolsVersion = "27.0.3"
-build_versions.compileSdkVersion = 27
-build_versions.minSdkVersion = 18
-build_versions.targetSdkVersion = 27
+//def build_versions = [:]
+    build_versions_buildToolsVersion = '27.0.3'
+    build_versions_compileSdkVersion = 26
+    build_versions_minSdkVersion = 19
+    build_versions_targetSdkVersion = 26
 
-build_versions.min_sdk = 18
-build_versions.target_sdk = 27
-build_versions.build_tools = "27.0.3"
-ext.build_versions = build_versions
+    build_versions_min_sdk = 19
+    build_versions_target_sdk = 26
+    build_versions_build_tools = '27.0.3'
+//ext.build_versions = build_versions
 //-------------------------------------------//
 
-def addRepos(RepositoryHandler handler) {
-    handler.google()
-    handler.jcenter()
-    handler.mavenCentral()
+//def addRepos(RepositoryHandler handler) {
+////    handler.google()
+//    handler.jcenter()
+//    handler.mavenCentral()
+//
+//    //Add the JitPack repository
+//    handler.maven { url 'https://jitpack.io' }
+//    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//
+//    //google maven
+//    handler.maven {
+//        url 'https://maven.google.com/'
+//        name 'Google'
+//    }
+//    //bong maven
+//    handler.maven { url 'http://112.124.27.178:9093/repository/maven-public/' }
+//
+//    //测试仓库
+//    //handler.maven { url 'http://localhost:9093/nexus/content/repositories/test-release/' }
+////    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-release/' }
+////    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-snapshots/' }
+//}
+//
+//ext.addRepos = this.&addRepos
 
-    //Add the JitPack repository
-    handler.maven { url "https://jitpack.io" }
-    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-
-    //google maven
-    handler.maven {
-        url 'https://maven.google.com/'
-        name 'Google'
-    }
-    //bong maven
-    handler.maven { url 'http://112.124.27.178:9093/repository/maven-public/' }
-
-    //测试仓库
-    //handler.maven { url 'http://localhost:9093/nexus/content/repositories/test-release/' }
-//    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-release/' }
-//    handler.maven { url 'http://192.168.101.131:9093/nexus/content/repositories/dangsang-snapshots/' }
 }
-
-ext.addRepos = this.&addRepos
